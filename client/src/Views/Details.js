@@ -25,14 +25,21 @@ const Details = (props) => {
 
     const styles = {
         paper: {
-            width: "50rem", padding: "1rem",
+            width: "50rem", 
+            padding: "1rem",
+            height:"21rem",
             marginLeft:320,
-            marginTop:0
+            marginTop:10
         },
-
+        button: { 
+            marginLeft:690, 
+            marginBottom:5
+        },
         h2: {
             display:"inline-block",
-            marginRight:430
+            marginRight:50,
+            marginBottom:-20,
+            marginTop:10
         },
 
         Link: {
@@ -51,25 +58,30 @@ const Details = (props) => {
     }
     return (
         <div>
-            <h1 style={{marginTop:20, marginBottom:-30}}>Archi<span style={{color:"red", fontStyle:"italic"}}>fy</span>.</h1>
-            <Paper elevation={3} style={{width:"50rem", marginLeft:320, background:"black"}}>
-            <h2 style={{marginTop:50, color:"white", fontSize:37}}>{project.name}</h2>
+            <h1 style={{marginTop:20}}>Archi<span style={{color:"red", fontStyle:"italic"}}>fy</span>.</h1>
+            <Paper elevation={3} style={{width:"50rem", marginLeft:320, background:"black", paddingTop:10
+                , paddingBottom:5}}>
+            <Button href="/projects" variant="outline-light"
+            style={styles.button}>&#x21e0; Home</Button>
             </Paper>
             <Paper elevation={3} style={styles.paper}>
             <div className="pic" style={styles.pic}>
-            <img  style={{width:300,height:250, objectFit:"cover",marginBottom:10,
-                marginRight:100}} src={project.imageUrl} alt=""/>
+            <img  style={{width:300,height:280, objectFit:"cover", marginTop:10,
+                marginRight:90, marginLeft:10}} src={project.imageUrl} alt=""/>
             </div>
             <div className="about" styles={styles.about}>
-            <h2 style={{display:"inline-block",marginRight:50}}>About:</h2>
+            <h2 style={styles.h2}>About:</h2>
             <hr style={{width:"40%"}}/>
+            <p style={{marginRight:50}}>Project Name: <strong>"{project.name}"</strong></p>
             <p style={{marginRight:50}}>Location: <strong>{project.location}</strong></p>
-            <p style={{marginRight:50}}>Architect: <strong>{project.architect}</strong></p>
+            <p style={{marginRight:50}}>Architect/Artist: <strong>{project.architect}</strong></p>
             <p style={{marginRight:50}}>Year Built: <strong>{project.built}</strong></p><br/>
             </div>
+            <div style={{marginTop:-15}}>
             <DeleteButton projectId={project._id} successCallback= {() => navigate("/projects")}></DeleteButton>
-            <Button href="/projects" variant="outline-dark"
-            style={{marginLeft:10, marginRight:50}}>Home</Button>
+            <Button href={"/projects/" + project._id + "/edit"} variant="outline-secondary"
+            style={{marginLeft:10, marginRight:50}}>&#8226; Edit</Button>
+            </div>
             </Paper><br/>
         </div>
     )

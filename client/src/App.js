@@ -6,6 +6,7 @@ import './App.css';
 import ProjectList from './Components/Dashboard';
 import ProjectForm from './Components/NewProject';
 import Details from './Views/Details';
+import UpdateProject from './Views/Edit';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <ProjectList path="/projects"/>
       <ProjectForm path="/projects/new"/>
       <Details path="/projects/:id"/>
+      <UpdateProject path="/projects/:id/edit"/>
       <RegLogin path="/reglogin"/>
     </Router>
     </div>

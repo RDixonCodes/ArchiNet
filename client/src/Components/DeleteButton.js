@@ -19,7 +19,7 @@ const DeleteButton = (props) => {
 
     return (
         <Button onClick={deleteProject} variant="outline-danger">
-            Delete
+        - Delete
         </Button>
     )
 }

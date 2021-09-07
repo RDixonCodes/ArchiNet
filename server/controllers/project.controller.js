@@ -14,15 +14,15 @@ module.exports.getAllProjects = (req, res) => {
     .catch(err => res.json(err));
 };
 
-module.exports.getFavoriteProject = (req, res) => {
-    Project.findOne({ _id: req.params.id })
-		.then(project => res.json(project))
-		.catch(err => res.json(err));
-}
-
 module.exports.getProject = (req, res) => {
 	Project.findOne({ _id: req.params.id })
 		.then(project => res.json(project))
+		.catch(err => res.json(err));
+};
+
+module.exports.getFavoriteProjects = (req, res) => {
+	Project.findOne({ _id: req.params.id })
+		.then(favoriteProjects => res.json(favoriteProjects))
 		.catch(err => res.json(err));
 };
 

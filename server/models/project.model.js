@@ -10,8 +10,8 @@ const ProjectSchema = new mongoose.Schema({
 
     imageUrl: {
             type: String,
-            required: [true, "Project URL is required"],
-            minlength: [5, "Project URL must be at least 5 characters"]
+            required: [true, "Image URL is required"],
+            minlength: [5, "Image URL must be at least 5 characters"]
         },
     
     architect: {
@@ -23,7 +23,7 @@ const ProjectSchema = new mongoose.Schema({
     location: {
         type: String,
         required: [true, "Project location is required"],
-        minlength: [5, "Project location must be at least 5 characters"]
+        minlength: [2, "Project location must be at least 2 characters"]
     },
 
     built: { 
