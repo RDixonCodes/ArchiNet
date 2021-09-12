@@ -86,7 +86,7 @@ const ProjectForm = (props) => {
         <Paper elevation={3} style={styles.paper}>
             <h1 style={{marginBottom:20}}>Project Form</h1>
             <form onSubmit = {onSubmitHandler}>
-            {errors.map((err,i) =>{return (<p key={i}>{err}</p>)
+            {errors.map((err,i) =>{return (<p style={{color:"red"}} key={i}>{err}</p>)
             })}
                 <FormControl variant="outlined" size="small" style={styles.input} errors="true">
                     <InputLabel >Name: </InputLabel>

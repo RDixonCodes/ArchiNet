@@ -1,5 +1,5 @@
 import { Router } from '@reach/router';
-import React from 'react';
+import React, {useState} from 'react';
 import Title from './Views/TitlePage';
 import RegLogin from './Views/RegLogin';
 import './App.css';
@@ -9,6 +9,10 @@ import Details from './Views/Details';
 import UpdateProject from './Views/Edit';
 
 function App() {
+  
+  const [projectDetails, setProjectDetails] = useState("");
+  const [projectFavorite, setProjectFavorite] = useState("");
+  
   return (
     <div className="App">
     <Router>

@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 const ProjectSchema = new mongoose.Schema({
 
     name: {
         type: String, 
-        // unique:[true, "Name already exist"],
         required: [true,"Project name is required"],
-        minlength: [3, "Project name must be at least 3 characters"]
+        minlength: [3, "Project name must be at least 3 characters"],
+        unique:true,
         },
 
     imageUrl: {
@@ -29,6 +30,13 @@ const ProjectSchema = new mongoose.Schema({
     built: { 
         type: Number,
         required: [true, "Year built is required"]
-    }
+    },
+
+    favorites: {
+        type: Number,
+        default: 0,
+    },
+    
     }, { timestamps: true });
+ProjectSchema.plugin(uniqueValidator, { message: "Looks like this project already exist. Please try again"});
 module.exports = mongoose.model('Projects', ProjectSchema);

@@ -4,10 +4,12 @@ import { Paper } from '@material-ui/core';
 import { navigate } from '@reach/router';
 import  Button  from 'react-bootstrap/Button';
 import DeleteButton from '../Components/DeleteButton';
+import Heart from "react-heart";
 
 const Details = (props) => {
     const { _id, id } = props; 
     const [project, setProject] = useState({});
+    const [active, setActive] = useState(false);
 
 
 
@@ -20,6 +22,7 @@ const Details = (props) => {
         }))
         .catch(err => {console.log(err)});
     }, [])
+
 
 
 
@@ -66,22 +69,24 @@ const Details = (props) => {
             </Paper>
             <Paper elevation={3} style={styles.paper}>
             <div className="pic" style={styles.pic}>
-            <img  style={{width:300,height:280, objectFit:"cover", marginTop:10,
-                marginRight:90, marginLeft:10}} src={project.imageUrl} alt=""/>
+            <img  style={{width:320,height:300, objectFit:"cover",
+                marginRight:90, marginLeft:7}} src={project.imageUrl} alt=""/>
             </div>
             <div className="about" styles={styles.about}>
             <h2 style={styles.h2}>About:</h2>
             <hr style={{width:"40%"}}/>
-            <p style={{marginRight:50}}>Project Name: <strong>"{project.name}"</strong></p>
+            <p style={{marginRight:20}}>Project Name: <strong>"{project.name}"</strong></p>
             <p style={{marginRight:50}}>Location: <strong>{project.location}</strong></p>
             <p style={{marginRight:50}}>Architect/Artist: <strong>{project.architect}</strong></p>
-            <p style={{marginRight:50}}>Year Built: <strong>{project.built}</strong></p><br/>
+            <p style={{marginRight:50, marginBottom:-1}}>Year Built: <strong>{project.built}</strong></p><br/>
             </div>
-            <div style={{marginTop:-15}}>
+            <div style={{marginTop:-10}}>
             <DeleteButton projectId={project._id} successCallback= {() => navigate("/projects")}></DeleteButton>
             <Button href={"/projects/" + project._id + "/edit"} variant="outline-secondary"
             style={{marginLeft:10, marginRight:50}}>&#8226; Edit</Button>
             </div>
+            <p style={{marginTop:5}}>Like: 
+            <Heart isActive={active} onClick={() => setActive(!active)} style={{width:18, marginRight:40, marginLeft:5}}/></p>
             </Paper><br/>
         </div>
     )

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 // near the top is a good place to group our imports
 const bcrypt = require('bcrypt');
 // this should go after 
-
+const Schema = mongoose.Schema;
 
 const UserSchema = new mongoose.Schema({
     
@@ -29,7 +29,12 @@ const UserSchema = new mongoose.Schema({
         type:String,
         required: [true, "Password is required"],
         minlength: [8, "Password must be 8 characters or longer"]
+    },
+    favorites: {
+        type: Schema.Types.ObjectId,
+        ref: "Favorite"
     }
+
 }, 
 {timestamps: true}
 );

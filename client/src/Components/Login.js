@@ -12,6 +12,8 @@ const Login = (props) =>{
         const [email, setEmail] = useState("");
         const [password, setPassword] = useState("");
         const [errorMessage, setErrorMessage] = useState([]);
+        const [username, setUsername] = useState()
+        const [user] = useState();
 
         const login = e => {
                 e.preventDefault();
@@ -71,7 +73,7 @@ const Login = (props) =>{
                         <form onSubmit={login}>
                         {/* {errors.map((err,i) =>{return (<p key={i}>{err}</p>)
                         })} */}
-                        <p className="error-text">{errorMessage ? errorMessage : ""}</p>
+                        <p className="error-text" style={{color:"red"}}>{errorMessage ? errorMessage : ""}</p>
                         <FormControl variant="outlined" size="small" style={styles.input}>
                         <InputLabel>User Email: </InputLabel>
                         <OutlinedInput type="text" name="email"

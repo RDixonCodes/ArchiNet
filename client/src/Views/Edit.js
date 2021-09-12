@@ -86,7 +86,7 @@ const UpdateProject = (props) => {
         <Paper elevation={6} style={styles.paper}>
             <h1>Edit Project</h1>
             <form onSubmit = {updateProject}>
-            {errors.map((err,i) =>{return (<p key={i}>{err}</p>)
+            {errors.map((err,i) =>{return (<p style={{color:"red"}} key={i}>{err}</p>)
             })}
                 <FormControl variant="outlined" size="small" style={styles.input} errors="true">
                     <FormHelperText style={{marginBottom:5, marginLeft:1}}>Name</FormHelperText>

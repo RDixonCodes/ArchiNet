@@ -11,6 +11,7 @@ const Title = () => {
         },
         p: {
             color:"white",
+            fontSize: "large"
 
         },
         span: {
