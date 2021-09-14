@@ -105,9 +105,15 @@ const UpdateProject = (props) => {
                     <OutlinedInput type="text" name="architect"
                     value={architect} onChange={(e)=>setArchitect(e.target.value)} color="secondary"/>
                     </FormControl><br/>
+
+                    <FormControl variant="outlined" size="small" style={styles.input} errors="true">
+                    <FormHelperText style={{marginBottom:5, marginLeft:1}}>Location</FormHelperText>
+                    <OutlinedInput type="text" name="location"
+                    value={location} onChange={(e)=>setArchitect(e.target.value)} color="secondary"/>
+                    </FormControl><br/>
                     
                     <FormControl variant="outlined" size="small" style={styles.input} errors="true">
-                    <FormHelperText style={{marginBottom:5, marginLeft:1}}>Built</FormHelperText>
+                    <FormHelperText style={{marginBottom:5, marginLeft:1}}>Year Built</FormHelperText>
                     <OutlinedInput type="number" name="built"
                     value={built} onChange={(e)=>setBuilt(e.target.value)} color="secondary"/>
                     </FormControl><br/>
