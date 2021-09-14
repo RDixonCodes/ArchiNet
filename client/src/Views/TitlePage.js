@@ -28,7 +28,7 @@ const Title = () => {
     return(
             
             <div style={{width:"100%", backgroundColor:"black", height:1000, paddingTop:200, marginTop:-130}}>
-                <Carousel fade={4000}>
+                <Carousel fade={2000}>
                     <Carousel.Item>
                     <img
                     style={{height:400, width:500}}

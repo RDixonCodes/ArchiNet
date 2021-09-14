@@ -86,7 +86,7 @@ const Details = (props) => {
             style={{marginLeft:10, marginRight:50}}>&#8226; Edit</Button>
             </div>
             <p style={{marginTop:5}}>Like: 
-            <Heart isActive={active} onClick={() => setActive(!active)} style={{width:18, marginRight:40, marginLeft:5}}/></p>
+            <Heart isActive={active} onClick={() => setActive(!active)} style={{width:15, marginRight:40, marginLeft:5}}/></p>
             </Paper><br/>
         </div>
     )

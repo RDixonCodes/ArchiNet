@@ -11,7 +11,7 @@ const RegLogin = () => {
     
     <div>
         <Register/>
-            <hr style={{width:"40%", marginLeft:450}}/>
+            <hr style={{width:"32%", marginLeft:510}}/>
             <Login/>
         <div>
             <Button onClick={ ()=> navigate("/projects") }></Button>
