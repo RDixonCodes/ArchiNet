@@ -9,4 +9,6 @@ with a description, photo and name of architect/artist.
 - React-Bootstrap(front-end framework)
 - MongoDB(database)
 
-<img width="1432" alt="archifyPic" src="https://user-images.githubusercontent.com/73620531/156236202-c2013a65-fbd5-4122-bc90-8ae1fa08076b.png">
+# Demo:
+https://user-images.githubusercontent.com/73620531/156912284-44a0c0ab-7327-460e-bf53-21edb2128b3d.mov
+
