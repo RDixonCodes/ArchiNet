@@ -1,8 +1,8 @@
 const Project = require('../models/project.model');
 
 module.exports.createProject = (req, res) => {
-    const { name, imageUrl, architect, location, built, favorite } = req.body;
-    Project.create({name, imageUrl, architect, location, built, favorite})
+    const { name, imageUrl, architect, location, built} = req.body;
+    Project.create({name, imageUrl, architect, location, built})
     .then(project => res.json(project))
     .catch(err => res.status(400).json(err));
 };
@@ -31,7 +31,7 @@ module.exports.getFavorites = (req, res) => {
 
 module.exports.updateProject = (req, res) => {
     Project.findOneAndUpdate({ _id: req.params.id }, req.body, { runValidators: true, new: true })
-    .then((updatedProject) => res.json(updatedProject))
+    .then(updatedProject => res.json(updatedProject))
     .catch(err => res.status(400).json(err));
 };
 

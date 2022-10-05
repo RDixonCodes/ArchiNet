@@ -10,8 +10,6 @@ import UpdateProject from './Views/Edit';
 
 function App() {
   
-  const [projectDetails, setProjectDetails] = useState("");
-  const [projectFavorite, setProjectFavorite] = useState("");
   
   return (
     <div className="App">

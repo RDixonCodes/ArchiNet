@@ -1,5 +1,5 @@
 const ProjectController = require('../controllers/project.controller');
-const { authenticate } = require("../config/jwt.config");
+const { authenticate } = require('../config/jwt.config');
 module.exports = function(app){
     app.post('/api/projects/new', ProjectController.createProject);
     // app.put('/api/projects/:id/favorite', ProjectController.updateFavoriteProjects);

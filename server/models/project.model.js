@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const {ObjectId} = mongoose.Schema.Types;
 const uniqueValidator = require('mongoose-unique-validator');
 const ProjectSchema = new mongoose.Schema({
 
@@ -32,11 +33,11 @@ const ProjectSchema = new mongoose.Schema({
         required: [true, "Year built is required"]
     },
 
-    favorites: {
-        type: Number,
-        default: 0,
-    },
+    favorites: [{
+        type: ObjectId,
+        ref:"Project",
+    }],
     
     }, { timestamps: true });
-ProjectSchema.plugin(uniqueValidator, { message: "Looks like this project already exist. Please try again"});
+ProjectSchema.plugin(uniqueValidator, { message: "Looks like this project alread exist. Please try again"});
 module.exports = mongoose.model('Projects', ProjectSchema);

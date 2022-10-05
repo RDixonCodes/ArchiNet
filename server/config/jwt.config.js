@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-//theis file is used as Middleware to authemticate a user
+//This file is used as Middleware to authemticate a user
 // before we pass the request on to the  controller, we will authenticate
 // the request
 module.exports = {

@@ -14,7 +14,7 @@ const UpdateProject = (props) => {
     const [architect, setArchitect] = useState();
     const [location, setLocation] = useState();
     const [built, setBuilt] = useState(0);
-    const [project, setProject] = useState({})
+    const [project, setProject] = useState({});
     const [errors, setErrors] = useState([]);
     
     useEffect(() => {
@@ -66,6 +66,7 @@ const UpdateProject = (props) => {
         },
         h1: {
             display: "inline-block",
+            marginLeft: 120,
             marginTop:20,
             marginBottom:10
         },
@@ -78,7 +79,7 @@ const UpdateProject = (props) => {
     }
     return (
         <>
-        <h1 style={styles.h1}>Archi<span style={{color:"red",fontStyle:"italic"}}>fy</span>.</h1>
+        <h1 style={styles.h1}>Archi<span style={{color:"red",fontStyle:"italic"}}>Net</span></h1>
         <Paper elevation={3} style={{width:"40rem",marginLeft:400, background:"black",
             paddingTop:10, paddingBottom:5}}>
         <Button style={styles.button} href="/projects" variant="outline-light">&#x21e0; Home</Button>
