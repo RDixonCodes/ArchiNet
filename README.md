@@ -1,6 +1,6 @@
-# Archify
+# ArchiNet
 
-Archify is a space to share architectural projects from an assortmant of disciplines. Each user can add to and browse a list of projects. Each one comes
+ArchiNet is a space to share architectural projects from an assortmant of disciplines. Each user can add to and browse a list of projects. Each one comes
 with a description, photo and name of architect/artist.
 
 # Technologies
