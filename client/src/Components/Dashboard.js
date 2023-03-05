@@ -52,7 +52,7 @@ const ProjectList = (props) => {
     },
 
     button: {
-      display: "inline-black",
+      display: "inline-block",
       marginRight: 10,
       marginLeft: 225,
       marginBottom: 10,

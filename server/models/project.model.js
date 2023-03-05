@@ -32,10 +32,13 @@ const ProjectSchema = new mongoose.Schema({
         type: Number,
         required: [true, "Year built is required"]
     },
-
+    likes: {
+        type: Number,
+        default: 0
+    },
     favorites: [{
         type: ObjectId,
-        ref:"Project",
+        ref:"project",
     }],
     
     }, { timestamps: true });

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
+import Alert from 'react-bootstrap/Alert';
 import {
   Paper,
   FormControl,
@@ -84,7 +85,9 @@ const Register = (props) => {
       </h1>
       <Paper elevation={6} style={styles.paper}>
         <h1>Register</h1>
-        {confirmReg ? <h4 style={{ color: "green" }}>{confirmReg}</h4> : null}
+        {confirmReg ? <Alert variant='success'>
+          {confirmReg}
+        </Alert> : null}
         <form onSubmit={registerUser}>
           {errors.map((err, i) => {
             return (
@@ -102,7 +105,7 @@ const Register = (props) => {
             <InputLabel>First Name: </InputLabel>
             <OutlinedInput
               type="text"
-              name="name"
+              name="firstName"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               color="secondary"
@@ -119,7 +122,7 @@ const Register = (props) => {
             <InputLabel>Last Name: </InputLabel>
             <OutlinedInput
               type="text"
-              name="imageUrl"
+              name="lastName"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
               color="secondary"

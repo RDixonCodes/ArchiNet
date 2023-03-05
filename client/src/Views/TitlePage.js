@@ -70,7 +70,7 @@ const Title = () => {
       <h1 style={styles.h1}>
         Archi<span style={styles.span}>Net</span>
       </h1>
-      <div style={{ width: 500, marginLeft: 420, textAlign: "justify" }}>
+      <div style={{ width: 500, marginLeft: 460, textAlign: "justify" }}>
         <p style={styles.p}>
           Welcome to{" "}
           <strong>

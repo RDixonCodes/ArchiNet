@@ -13,7 +13,7 @@ const Details = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/projects/" + props.id)
+      .get(`http://localhost:8000/api/projects/${props.id}`)
       .then((res) =>
         setProject({
           ...res.data,
