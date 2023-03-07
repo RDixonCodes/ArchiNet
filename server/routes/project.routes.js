@@ -7,6 +7,6 @@ module.exports = function(app){
     app.get('/api/projects/:id', ProjectController.getProject);
     app.put('/api/projects/:id/edit', authenticate, ProjectController.updateProject);
     app.delete('/api/projects/:id/delete', authenticate, ProjectController.deleteProject);
-    app.put('/api/projects/favorite/:id', ProjectController.getFavorites);
+    app.put('/api/projects/likes/:id', ProjectController.getLikes);
     // app.put('/api/projects/favorite/:id', ProjectController.updateFavorite);
 }

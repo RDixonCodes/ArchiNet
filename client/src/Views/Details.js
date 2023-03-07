@@ -4,12 +4,17 @@ import { Paper } from "@material-ui/core";
 import { navigate } from "@reach/router";
 import Button from "react-bootstrap/Button";
 import DeleteButton from "../Components/DeleteButton";
-import Heart from "react-heart";
 
 const Details = (props) => {
+
+  let {projectDetails} = props;
+  
   const { _id, id } = props;
   const [project, setProject] = useState({});
+
   const [active, setActive] = useState(false);
+
+  const [displayLikes, setDisplayLikes] = useState(0);
 
   useEffect(() => {
     axios
@@ -23,6 +28,16 @@ const Details = (props) => {
         console.log(err);
       });
   }, []);
+
+  const projectLikes = (e) => {
+    e.preventDefault();
+    axios.put('http://localhost:8000/api/projects/likes/' + props.id)
+    .then(res => {
+      setDisplayLikes(res.data.updatedProject.likes)
+      document.getElementById('like_button').setAttribute('disabled', 'active');
+      document.getElementById('like_button').style.backgroundColor = '';
+    })
+  }
 
   const styles = {
     paper: {
@@ -115,19 +130,16 @@ const Details = (props) => {
           <Button
             href={"/projects/" + project._id + "/edit"}
             variant="outline-secondary"
-            style={{ marginLeft: 10, marginRight: 50 }}
+            style={{ marginLeft: 10 }}
           >
             &#8226; Edit
           </Button>
+          <Button id="like_button" variant="outline-secondary"
+          onClick={projectLikes} style={{ marginRight: 30, marginLeft: 10}}> &#8853; Favorite</Button>
         </div>
-        <p style={{ marginTop: 5 }}>
-          Like:
-          <Heart
-            isActive={active}
-            onClick={() => setActive(!active)}
-            style={{ width: 15, marginRight: 40, marginLeft: 5 }}
-          />
-        </p>
+        {displayLikes <= 0 ? 
+          ''
+        : <p style={{ marginRight: 40, marginTop: 5}}> favorite(s): {displayLikes}</p> }
       </Paper>
       <br />
     </div>

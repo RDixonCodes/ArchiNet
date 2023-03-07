@@ -23,8 +23,8 @@ const DeleteButton = (props) => {
   };
 
   return (
-    <Button onClick={deleteProject} variant="outline-danger">
-      - Delete
+    <Button onClick={deleteProject} variant="outline-secondary">
+      &#8861; Delete
     </Button>
   );
 };

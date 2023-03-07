@@ -20,13 +20,18 @@ module.exports.getProject = (req, res) => {
 		.catch(err => res.json(err));
 };
 
-module.exports.getFavorites = (req, res) => {
-    Project.findOneAndUpdate({_id: req.params.id }, 
-        { $inc: { favorites: 1 } },
-        {new:true})
+module.exports.getLikes = (req, res) => {
+    Project.findOneAndUpdate({_id: req.params.id},
+        {$inc: {likes:1}}, {new:true})
+        .then((updatedProject) => res.json({updatedProject:updatedProject}))
+        .catch(err=> res.status(400).json(err));
+}
+
+module.exports.getAllFavorites = (req, res) => {
+    Project.find({})
     // .sort({name:"ascending"}) //Will sort in alphabetical order. not upper/lower case sensitive
-    .then((updatedProject) => res.json({updatedProject:updatedProject}))
-    .catch(err => res.status(400).json(err))
+    .then(favorites => res.json(favorites))
+    .catch(err => res.json(err));
 };
 
 module.exports.updateProject = (req, res) => {
