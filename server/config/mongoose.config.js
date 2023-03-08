@@ -8,5 +8,5 @@ module.exports = (db_name) => {
     // useFindAndModify: false,
 })
     .then(() => console.log("Ready to view projects!"))
-    .catch(err => console.log("Mmm. Nope. Try agian.", err));
+    .catch(err => console.log("Hmmm. Nope. Try agian.", err));
 }

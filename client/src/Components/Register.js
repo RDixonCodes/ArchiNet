@@ -9,6 +9,7 @@ import {
   OutlinedInput,
 } from "@material-ui/core";
 
+
 const Register = (props) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -28,6 +29,7 @@ const Register = (props) => {
       password,
       confirmPassword,
     };
+
     axios
       .post("http://localhost:8000/api/user/register", newUser, {
         withCredentials: true,
@@ -76,6 +78,10 @@ const Register = (props) => {
     h1: {
       marginTop: 20,
     },
+    alert: {
+      width: '25rem',
+      marginLeft: '1.5rem'
+    }
   };
 
   return (
@@ -85,15 +91,17 @@ const Register = (props) => {
       </h1>
       <Paper elevation={6} style={styles.paper}>
         <h1>Register</h1>
-        {confirmReg ? <Alert variant='success'>
+        {confirmReg ? <Alert variant='success' 
+        style={styles.alert}>
           {confirmReg}
         </Alert> : null}
         <form onSubmit={registerUser}>
           {errors.map((err, i) => {
             return (
-              <p style={{ color: "red" }} key={i}>
-                {err}
-              </p>
+              <Alert variant='danger' key={i}
+              style={styles.alert}>
+                  {err}
+                </Alert>
             );
           })}
           <FormControl

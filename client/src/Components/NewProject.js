@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import axios from "axios";
 import { navigate} from "@reach/router";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 import {
   Paper,
   FormControl,
@@ -67,6 +68,10 @@ const ProjectForm = (props) => {
     p: {
       marginLeft: 490,
     },
+    alert: {
+      width: '25rem',
+      marginLeft: '6.5rem'
+    }
   };
   return (
     <div>
@@ -94,9 +99,10 @@ const ProjectForm = (props) => {
         <form onSubmit={onSubmitHandler}>
           {errors.map((err, i) => {
             return (
-              <p style={{ color: "red" }} key={i}>
-                {err}
-              </p>
+              <Alert variant='danger' key={i}
+              style={styles.alert}>
+                  {err}
+                </Alert>
             );
           })}
           <FormControl

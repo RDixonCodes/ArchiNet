@@ -5,11 +5,8 @@ import Button from "react-bootstrap/Button";
 import { Paper } from "@material-ui/core";
 
 const ProjectList = (props) => {
-  // const { project } = props;
-  // const [project, setProject] = useState()
+
   const [projects, setProjects] = useState([]);
-  // const [favorites, setFavorites] = useState(0);
-  // const [displayfavorites, setDisplayfavorites] = useState(0);
 
   useEffect(() => {
     axios
@@ -128,31 +125,10 @@ const ProjectList = (props) => {
                 >
                   View
                 </Button>
-                {/* Create favorites list. */}
-                {/* <Button id="project_favorites" onClick={getFavorites(project._id)} disabled={favorites} variant="outline-dark">Favorite</Button>
-            <p>Favorites: {project.favorites}</p> */}
               </div>
             </Paper>
           );
         })}
-      {/* <Paper elevation={3} style={{width:"50rem", marginLeft:320, marginTop:20,background:"black",
-            paddingTop:5, paddingBottom:1}}>
-            <h2 style={{marginRight:640, color:"white"}}>Favorites:</h2>
-        </Paper>
-        {favorites.map((favorite, i) => {
-        return(
-            <Paper key={i} elevation={3} style={styles.paper}>
-            <div className="image" style={styles.image}>
-                <img style={{width:230,height:130, objectFit:"cover",marginBottom:10}} src={favorite.imageUrl} alt="image"></img>
-            </div>
-            <div className="name">
-                <h2>"{favorite.name}"</h2>
-            <Button href={"/projects/" + favorite._id} variant="outline-dark" style={{marginRight:20}}>View</Button>
-            <Button onClick={""}  variant="outline-dark">Remove</Button>
-            </div>
-            </Paper>
-        )
-        })} */}
     </div>
   );
 };

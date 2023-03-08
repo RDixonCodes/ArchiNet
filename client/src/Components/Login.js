@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 import {
   Paper,
   OutlinedInput,
@@ -66,6 +67,10 @@ const Login = (props) => {
       display: "inline-block",
       marginLeft: 225,
     },
+    alert: {
+      width: '25rem',
+      marginLeft: '1.5rem'
+    }
   };
 
   return (
@@ -73,11 +78,10 @@ const Login = (props) => {
       <Paper elevation={6} style={styles.paper}>
         <h1>Login</h1>
         <form onSubmit={login}>
-          {/* {errors.map((err,i) =>{return (<p key={i}>{err}</p>)
-                        })} */}
-          <p className="error-text" style={{ color: "red" }}>
-            {errorMessage ? errorMessage : ""}
-          </p>
+          { errorMessage.length >= 1 ? <Alert variant='danger'
+          style={styles.alert}>
+          {errorMessage}
+          </Alert> : null}
           <FormControl variant="outlined" size="small" style={styles.input}>
             <InputLabel>User Email: </InputLabel>
             <OutlinedInput

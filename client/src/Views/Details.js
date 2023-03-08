@@ -12,8 +12,6 @@ const Details = (props) => {
   const { _id, id } = props;
   const [project, setProject] = useState({});
 
-  const [active, setActive] = useState(false);
-
   const [displayLikes, setDisplayLikes] = useState(0);
 
   useEffect(() => {
@@ -29,8 +27,7 @@ const Details = (props) => {
       });
   }, []);
 
-  const projectLikes = (e) => {
-    e.preventDefault();
+  const projectLikes = () => {
     axios.put('http://localhost:8000/api/projects/likes/' + props.id)
     .then(res => {
       setDisplayLikes(res.data.updatedProject.likes)
@@ -72,6 +69,7 @@ const Details = (props) => {
       width: 200,
     },
   };
+
   return (
     <div>
       <h1 style={{ marginLeft: 140, marginTop: 20 }}>
@@ -92,7 +90,7 @@ const Details = (props) => {
         </Button>
       </Paper>
       <Paper elevation={3} style={styles.paper}>
-        <div className="pic" style={styles.pic}>
+        <div className="project-pic" style={styles.pic}>
           <img
             style={{
               width: 320,
@@ -137,9 +135,7 @@ const Details = (props) => {
           <Button id="like_button" variant="outline-secondary"
           onClick={projectLikes} style={{ marginRight: 30, marginLeft: 10}}> &#8853; Favorite</Button>
         </div>
-        {displayLikes <= 0 ? 
-          ''
-        : <p style={{ marginRight: 40, marginTop: 5}}> favorite(s): {displayLikes}</p> }
+        <p style={{ marginRight: 40, marginTop: 5}}> favorite(s): {displayLikes}</p>
       </Paper>
       <br />
     </div>
