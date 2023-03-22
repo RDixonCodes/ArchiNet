@@ -63,6 +63,5 @@ module.exports = {
         .then(user => res.json(user))
         .catch(err => res.json(err));
     }
-
-
+    
 }

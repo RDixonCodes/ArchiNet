@@ -46,7 +46,7 @@ const Title = () => {
         <Carousel.Item>
           <img
             style={{ height: 400, width: 500 }}
-            src="https://media.istockphoto.com/photos/concert-hall-los-angeles-california-picture-id95111484?k=20&m=95111484&s=612x612&w=0&h=Po5chYd9_4icshLhmdRgHJmdm2dfTEna0b9v4ivpyhY="
+            src="https://mymodernmet.com/wp/wp-content/uploads/2017/06/Alessio-Forlano-architectural-photography-5.jpg"
             alt="Second slide"
           />
 
@@ -70,7 +70,7 @@ const Title = () => {
       <h1 style={styles.h1}>
         Archi<span style={styles.span}>Net</span>
       </h1>
-      <div style={{ width: 500, marginLeft: 460, textAlign: "justify" }}>
+      <div style={{ width: 500, marginLeft: 440, textAlign: "justify" }}>
         <p style={styles.p}>
           Welcome to{" "}
           <strong>
